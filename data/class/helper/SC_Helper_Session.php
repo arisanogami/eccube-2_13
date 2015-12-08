@@ -201,10 +201,6 @@ class SC_Helper_Session
         // token の妥当性チェック
         $ret = $_REQUEST[TRANSACTION_ID_NAME] === $_SESSION[TRANSACTION_ID_NAME];
 
-        if (empty($_REQUEST[TRANSACTION_ID_NAME]) || empty($_SESSION[TRANSACTION_ID_NAME])) {
-            $ret = false;
-        }
-
         if ($is_unset || $ret === false) {
             SC_Helper_Session_Ex::destroyToken();
         }
